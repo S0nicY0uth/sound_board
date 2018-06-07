@@ -1,0 +1,24 @@
+<h1>Hello</h1>
+
+<p>Helskjdlaksjd</p>
+
+<div id="app-container"></div>
+
+<a data-confirm="Are you sure?" data-method="delete" href="<%= session_index_path %>" rel="nofollow">Delete</a>
+<script>
+  document.addEventListener('DOMContentLoaded',function(){
+    let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+    fetch('/spotify.json', {
+          method: 'GET',
+          credentials: 'include',
+          headers:{
+            'Content-Type': 'application/json',
+            'X-CSRF-Token': token
+          }
+        }).then(res => res.json())
+        .catch(error => console.error('Error:', error))
+        .then(response => console.log('Success:', response));
+  });
+</script>
+
