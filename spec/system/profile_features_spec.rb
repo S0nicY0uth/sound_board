@@ -21,4 +21,11 @@ RSpec.describe "Messaging system", :type => :feature do
         end
     end
 
+    describe 'viewing messages' do
+        it 'should allow me to view the messages associated with a specific room' do
+            visit '/'
+           expect(page).to have_text 'Sup Fool'
+        end
+    end
+
 end
