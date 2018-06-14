@@ -1,14 +1,39 @@
 {
   "name": "s-board",
   "private": true,
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "roots": [
+      "spec/javascript",
+      "spec/javascript/helpers"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "app/javascript/packs/components",
+      "app/javascript/packs"
+    ]
+  },
   "dependencies": {
     "@rails/webpacker": "3.5",
     "babel-preset-react": "^6.24.1",
     "prop-types": "^15.6.1",
     "react": "^16.4.0",
-    "react-dom": "^16.4.0"
+    "react-addons-test-utils": "^15.6.2",
+    "react-dom": "^16.4.0",
+    "react-transition-group": "1.x",
+    "sinon": "2.4.1"
   },
   "devDependencies": {
-    "webpack-dev-server": "2.11.2"
+    "babel-jest": "^23.0.1",
+    "babel-preset-es2015": "^6.24.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-react-16-adapter-setup": "^0.1.0",
+    "jest": "^23.1.0",
+    "nock": "^9.3.3",
+    "react-test-renderer": "^16.4.1",
+    "webpack-dev-server": "^2.11.1"
   }
 }
