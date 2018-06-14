@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import CarouselControl from './carouselControl'
+import AlbumDetail from './albumDetail'
 import { CSSTransitionGroup } from 'react-transition-group'
 
 class Carousel extends React.Component{
@@ -33,9 +34,9 @@ class Carousel extends React.Component{
 
         if(newIndex < 0){
             newIndex = this.props.albums.length -1;
-    }
+        }
 
-    this.setState({
+        this.setState({
             albumIndex: newIndex,
         })
     }
@@ -66,16 +67,17 @@ class Carousel extends React.Component{
                             this.state.albumIndex === i ? 
                                 <div key={i} className="slide-container">
                                     <div className="image col-50" style ={ slideStyle } ></div>
-                                    <div className="col-50">
+                                    <div className="col-50 album-detail">
                                         <h1>{album.album_name}</h1>
-                                        <ul>
+                                        <ol>
                                         { album.tracks.map((track, i)=>{
                                             return(
                                                 <li key={i}>{track.track}</li>
                                             )
                                         })}
-                                        </ul>
+                                        </ol>
                                 </div>
+                                <AlbumDetail/>
                             </div> : null
                         )
                     })

@@ -47,12 +47,20 @@ body {
              position: absolute;
              left: 0px;
              top: 0px;
+             z-index: -1;
          }
          .col-50.image{
              right: 0px;
              left: auto;
-             z-index: -1;
          }
+         .col-50.album-detail.test{
+            bottom: 0px;
+            top: auto;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
      }
     }
 

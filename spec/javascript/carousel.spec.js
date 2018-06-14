@@ -30,9 +30,9 @@ describe('<Carousel /> rendering', ()=>{
     expect(component).toHaveLength(1);  
   });
 
-  it('should render one unordered list', ()=> {
+  it('should render one ordered list', ()=> {
     const component = shallow(<Carousel albums={albums}/>);
-    expect(component.find('ul').length).toEqual(1);
+    expect(component.find('ol').length).toEqual(1);
   });
 
   it('should render one h1 element', ()=> {
@@ -52,8 +52,8 @@ describe('<Carousel /> rendering', ()=>{
 
   it('should render the correct tracks', ()=> {
     const component = shallow(<Carousel albums={albums}/>);
-    expect(component.find('ul').childAt(0).text()).toEqual('All I Really Want to Do');
-    expect(component.find('ul').childAt(1).text()).toEqual('Black Crow Blues');
+    expect(component.find('ol').childAt(0).text()).toEqual('All I Really Want to Do');
+    expect(component.find('ol').childAt(1).text()).toEqual('Black Crow Blues');
   });
 
   it('should render 2 carousel controls components', ()=> {
@@ -125,7 +125,6 @@ describe('<Carousel /> prevSlide method',()=>{
 
     setTimeout(function(){
       expect(component.state.albumIndex).toEqual(2);
-    },200);
-    
+    },200);  
   });
 });
